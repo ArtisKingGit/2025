@@ -1,11 +1,18 @@
 from customtkinter import *
-
+from PIL import Image
 app = CTk()
 app.geometry("856x645")
+
+
+
 
 main_view = CTkFrame(master=app, fg_color="#49a628",  width=856, height=645, corner_radius=0)
 main_view.pack(anchor="center")
 main_view.pack_propagate(0)
+
+main_img_data = Image.open("Easy_Market/EASY MARKETER.png")
+main_img = CTkImage(light_image=main_img_data, dark_image= main_img_data)
+img =CTkLabel(master=main_view, image=main_img, text="", height=100, width=100).pack(anchor="n", pady=10)
 
 lbl = CTkLabel(master= main_view, text="Easy market", font=("Arial ", 40), text_color="white")
 lbl.pack()

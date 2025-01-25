@@ -3,7 +3,6 @@ from tkinter import *
 from PIL import Image
 import subprocess
 from tkintermapview import *
-import tkintermapview
 
 app = CTk()
 app.geometry("856x645")
@@ -84,7 +83,7 @@ CTkButton(master=sidebar_frame, image=person_img, text="Account", fg_color="tran
 widget = TkinterMapView(app, width =600, height = 400)
 widget.pack(fill = "both", expand=True)
 
-widget.set_address("Kiserian, Kenya",marker=True)
+widget.set_address("Kenya, Nairobi",marker=True)
 
 app.mainloop()
         

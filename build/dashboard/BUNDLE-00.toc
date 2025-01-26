@@ -1,0 +1,3 @@
+([('dashboard',
+   '/Users/Arthur/Desktop/ScienceFair-main 2/dist/dashboard',
+   'EXECUTABLE')],)

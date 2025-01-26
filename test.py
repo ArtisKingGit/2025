@@ -1,67 +1,79 @@
-from customtkinter import *
-from tkinter import *
-from PIL import Image
-from subprocess import call
+from flask import Flask, render_template, request, redirect, url_for, flash
+import psycopg
 
-app = CTk()
-app.geometry("856x645")
-app.resizable(0,0)
+app = Flask(__name__)
+app.secret_key = "your_secret_key"
 
-set_appearance_mode("light")
+# Database connection function
+def get_db_connection():
+    conn = psycopg.connect("dbname='postgres' user='postgres' password='asdfghj3' host='localhost' port='5432'")
+    return conn
 
-def test():
-    main_view = CTkFrame(master=call(["python", "Dashboard.py"]), fg_color="#fff",  width=680, height=650, corner_radius=0)
-    main_view.pack_propagate(0)
-    main_view.pack(side="left")
-    
-#Sidebar- main
-sidebar_frame = CTkFrame(master=app, fg_color="#2A8C55",  width=176, height=650, corner_radius=0)
-sidebar_frame.pack_propagate(0)
-sidebar_frame.pack(fill="y", anchor="w", side="left")
+@app.route("/")
+def home():
+    return redirect(url_for("register"))
 
-#Rocket image
-logo_img_data = Image.open("logo.png")
-logo_img = CTkImage(dark_image=logo_img_data, light_image=logo_img_data, size=(77.68, 85.42))
-CTkLabel(master=sidebar_frame, text="", image=logo_img).pack(pady=(38, 0), anchor="center")
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+        password_confirm = request.form.get("password_confirm")
 
-#Dashboard
-analytics_img_data = Image.open("analytics_icon.png")
-analytics_img = CTkImage(dark_image=analytics_img_data, light_image=analytics_img_data)
-CTkButton(master=sidebar_frame, image=analytics_img, text="Dashboard", fg_color="transparent", font=("Arial Bold", 14), hover_color="#207244", anchor="w", command= test).pack(anchor="center", ipady=5, pady=(60, 0))
+        if not username or not password or not password_confirm:
+            flash("All fields are required!")
+            return render_template("register.html")
 
-#Feedback
-feedback_img_data = Image.open("feedback_icon.png")
-feedback_img = CTkImage(dark_image= feedback_img_data, light_image= feedback_img_data)
-CTkButton(master = sidebar_frame, image = feedback_img, text = "Feedback", fg_color= "transparent", font = ("Arial Bold", 14), hover_color="#207244", anchor = "w",).pack(anchor = "center", ipady =5, pady = (16, 0 ))
- 
-#Orders
-package_img_data = Image.open("package_icon.png")
-package_img = CTkImage(dark_image=package_img_data, light_image=package_img_data)
-CTkButton(master=sidebar_frame, image=package_img, text="Orders", fg_color="transparent", font=("Arial Bold", 14), hover_color="#207244", anchor="w").pack(anchor="center", ipady=5, pady=(16, 0))
+        if len(username) < 8 or len(password) < 8:
+            flash("Username and password must be at least 8 characters!")
+            return render_template("register.html")
 
-#The order lists
-list_img_data = Image.open("list_icon.png")
-list_img = CTkImage(dark_image=list_img_data, light_image=list_img_data)
-CTkButton(master=sidebar_frame, image=list_img, text="Orders", fg_color="transparent", font=("Arial Bold", 14), hover_color="#207244", anchor="w").pack(anchor="center", ipady=5, pady=(16, 0))
+        if password != password_confirm:
+            flash("Passwords do not match!")
+            return render_template("register.html")
 
-#Returns
-returns_img_data = Image.open("returns_icon.png")
-returns_img = CTkImage(dark_image=returns_img_data, light_image=returns_img_data)
-CTkButton(master=sidebar_frame, image=returns_img, text="Returns", fg_color="transparent", font=("Arial Bold", 14), hover_color="#207244", anchor="w").pack(anchor="center", ipady=5, pady=(16, 0))
+        try:
+            conn = get_db_connection()
+            cur = conn.cursor()
+            cur.execute("INSERT INTO names (username, pass) VALUES (%s, %s)", (username, password))
+            conn.commit()
+            flash("Registration successful!")
+            return redirect(url_for("login"))
+        except Exception as e:
+            flash(f"Error: {e}")
+        finally:
+            if conn:
+                conn.close()
 
-#Settings
-settings_img_data = Image.open("settings_icon.png")
-settings_img = CTkImage(dark_image=settings_img_data, light_image=settings_img_data)
-CTkButton(master=sidebar_frame, image=settings_img, text="Settings", fg_color="transparent", font=("Arial Bold", 14), hover_color="#207244", anchor="w").pack(anchor="center", ipady=5, pady=(16, 0))
+    return render_template("register.html")
 
-#Account
-person_img_data = Image.open("person_icon.png")
-person_img = CTkImage(dark_image=person_img_data, light_image=person_img_data)
-CTkButton(master=sidebar_frame, image=person_img, text="Account", fg_color="transparent", font=("Arial Bold", 14), hover_color="#207244", anchor="w").pack(anchor="center", ipady=5, pady=(160, 0))
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
 
-app.mainloop()
-        
- 
+        try:
+            conn = get_db_connection()
+            cur = conn.cursor()
+            cur.execute("SELECT * FROM names WHERE username = %s AND pass = %s", (username, password))
+            user = cur.fetchone()
+            if user:
+                flash("Login successful!")
+                return redirect(url_for("dashboard"))
+            else:
+                flash("Invalid username or password!")
+        except Exception as e:
+            flash(f"Error: {e}")
+        finally:
+            if conn:
+                conn.close()
 
+    return render_template("login.html")
 
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
 
+if __name__ == "__main__":
+    app.run(debug=True)

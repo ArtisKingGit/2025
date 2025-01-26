@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Library</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <!-- Sidebar content -->
+    </div>
+    <div class="main-content">
+      <h1>Register Your User</h1>
+      <form id="registration-form">
+        <input type="text" id="username" placeholder="Enter username..." required minlength="8" maxlength="14">
+        <input type="password" id="password" placeholder="Enter password..." required minlength="8" maxlength="14">
+        <input type="password" id="password-confirm" placeholder="Confirm password..." required minlength="8" maxlength="14">
+        <button type="submit" class="register-btn">Register</button>
+      </form>
+      <button class="signin-btn" onclick="redirectToLogin()">Already have an account? Sign in here</button>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>

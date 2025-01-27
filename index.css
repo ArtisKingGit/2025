@@ -1,86 +1,40 @@
-* {
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-  }
-  
-  .container {
-    display: flex;
-    width: 856px;
-    height: 645px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .sidebar {
-    background-color: #207244;
-    width: 330px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .main-content {
-    background-color: #fff;
-    width: 526px;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  input {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px solid #207244;
-    border-radius: 5px;
-  }
-  
-  .register-btn {
-    background-color: #207244;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .register-btn:hover {
-    background-color: #268750;
-  }
-  
-  .signin-btn {
-    background-color: transparent;
-    color: #207244;
-    border: 2px solid #207244;
-    padding: 10px 20px;
-    margin-top: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .signin-btn:hover {
-    background-color: #207244;
-    color: #fff;
-  }
-  
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: seagreen ;
+}
+.wrapper{
+  width: 420px;
+  background: purple;
+  color: #FFF;
+}
+
+.wrapper h1{
+  font-size: 36px;
+  text-align: center;
+}
+
+.wrapper .input-box{
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+
+.input-box input{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 40px;
+}

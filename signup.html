@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGNUP</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  .go-back-btn {
+    background-color: #07a31c;
+    background: linear-gradient(90deg, #07a31c, #0be016);
+    color: #02ee8c;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(8, 24, 8, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .go-back-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(9, 238, 139, 0.7);
+  }
+  
+</style>
+<body> <div class="go-back-btn"></div> <button onclick="goBack()">Go Back</button>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+  </div>
+  <div class="container">
+    <form action="#" class="form loginForm active">
+      <h1 class="title">Login</h1>
+      <div class="inputBox">
+        <i class='bx bx-envelope'></i>
+        <input type="email" placeholder="Enter your email" required>
+      </div>
+      <div class="inputBox">
+        <i class='bx bx-lock-alt'></i>
+        <input type="password" placeholder="Enter your password" required>
+      </div>
+      <a href="" class="forgotPassLink">Forgot password?</a>
+      <input type="submit" value="Login" class="submitBtn">
+      <label for="" class="notMember">Not a member? <span><a href="#" class="signupLink">Sign Up.</a></span></label>
+    </form>
+    <form action="#" class="form signupForm inactive">
+      <h1 class="title">Sign Up</h1>
+      <div class="inputBox">
+        <i class='bx bx-envelope'></i>
+        <input type="email" placeholder="Enter your email" required>
+      </div>
+      <div class="inputBox">
+        <i class='bx bx-lock-alt'></i>
+        <input type="password" placeholder="Enter your password" required>
+      </div>
+      <div class="inputBox">
+        <i class='bx bx-lock-alt'></i>
+        <input type="password" placeholder="Re-enter your password" required>
+      </div>
+      <input type="submit" value="Sign Up" class="submitBtn">
+      <label for="" class="isMember">Is a member? <span><a href="#" class="loginLink">Login.</a></span></label>
+    </form>    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+   

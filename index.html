@@ -3,31 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="index.css">
-  <title>Document</title>
+  <title>Clock</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #0ebc3f,gray,black;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+     
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 90%;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: green,black,grey;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-image: url('dawamu\ 4.png');
+      background-size: cover;
+      display: inline-block;
+      margin: 20px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .nav-links li {
+      margin: 0 15px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: rgb(47, 255, 0);
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-top: 30px;
+      color: #0ebc3f,black;
+    }
+
+    p {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+  </style>
 </head>
 <body>
-    <div class="wrapper">
-      <form action="">
-        <h1>Login</h1>
-        <div class="input-box">
-          <input type="text" placeholder="Username" required>
-        </div>
-        <div class="input-box">
-          <input type="password" placeholder="Password" required>
-        </div>
+  <div class="container">
+    <a href="#" class="logo"></a>
+    <h1 style="color: #0ebc3f,black;">DAWAMU SCHOOL BOOKSHOP</h1>
+  
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="shop.html">Books</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contactus.html">Contact</a></li>
+      <li><a href="signup.html">Sign Up</a></li>
+    </ul>                       
 
-        <div class="remember-forgot">
-          <label><input type="checkbox">Remember me</label>
-          <a href="#">Forgot Password?</a>
-        </div>
-
-        <button type="submit" class="btn">Login</button>
-
-        <div class="register-link">
-          <p>Dont have an account?<a href="#">Register</a></p>
-        </div>
-      </form>
-    </div>
+    <h1>Welcome to Dawamu School Bookshop</h1>
+    <p>Find a wide range of books, encyclopedias, and more.</p>
+  </div>
+  
 </body>
 </html>

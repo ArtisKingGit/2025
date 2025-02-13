@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="shop2.css">
 </head>
 <body>
+    <header>
+        <h1>Dawamu School Bookshop</h1>
+        <nav>
+            <button onclick="goBack()" class="go-back-btn">Go Back</button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Books</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contactus.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="card-container">
     
         <div class="card">
@@ -51,5 +63,10 @@
             <a href="paymentgateway.html"><button class="btn follow">Take book</button></a>
         </div>
     </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 </html>

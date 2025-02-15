@@ -12,6 +12,18 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        .go-back-btn {
+            background: linear-gradient(90deg, #444, #666);
+            color: #e0e0e0;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
         .container {
             display: flex;
             justify-content: center;
@@ -126,8 +138,10 @@
 </head>
 
 <body>
-    <div class="container">
+
+     <div class="container">
         <form action="#">
+            <button onclick="goBack()" class="go-back-btn">Go Back</button>
             <div class="row">
                 <div class="col">
                     <h3 class="title">Billing Address</h3>
@@ -220,6 +234,9 @@
             cNumber = cNumber.match(/.{1,4}/g)?.join(" ") || ""; // Group into sets of 4
             cardNumInput.value = cNumber;
         });
+        function goBack() {
+            window.history.back();
+        }
     </script>
 </body>
 

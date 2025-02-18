@@ -171,33 +171,5 @@ package_img_data_2 = Image.open("package_icon.png")
 package_img_2 = CTkImage(dark_image= package_img_data_2, light_image= package_img_data_2 )
 CTkButton(master=main_view, image= package_img_2, text = "Submit", font= ("Arial Black", 14), border_color= "#207244", fg_color= "#fff", border_width= 3, command= other_page).pack(anchor = "nw", pady = 25, padx = 24)
 
-#Tables
-table_data = [
-    ["Return ID", "Item Name", "Customer", "Address", "Status", "Quantity"],
-    ['1', 'Pencil', 'Patrick Gichui', '123 Dawamu Street', 'Confirmed', '8'],
-    ['2', 'Chemistry book', 'Ryan Kamau', '456 Elm St', 'Packing', '1'],
-    ['3', 'Debit Card', 'Benjamin Baraka', '789 Oak St', 'Delivered', '1'],
-    ['4', 'Macbook Pro', 'Jacinta', '101 Pine St', 'Confirmed', '9'],
-    ['5', 'Camera', 'Boniface', '202 Cedar St', 'Processing', '2'],
-    ['6', 'Printer', 'Tr Timothy', '303 Maple St', 'Cancelled', '2'],
-    ['7', 'Smartwatch', 'Mr Mwau', '404 Birch St', 'Shipping', '6'],
-    ['8', 'Football', 'Favour Keli', '505 Redwood St', 'Cancelled', '10'],
-    ['9', 'Monitor', 'Trevor Mutai', '606 Fir St', 'Shipping', '6'],
-    ['10', 'External Hard Drive', 'Benjamin Ombaka', '707 Oak St', 'Delivered', '10'],
-    ['11', 'Table Lamp', 'Shaun Justin', '808 Pine St', 'Confirmed', '4'],
-    ['12', 'Desk Chair', 'Samuel Omondi', '909 Cedar St', 'Processing', '9'],
-    ['13', 'Coffee Maker', 'Lucas Junior', '1010 Elm St', 'Confirmed', '6'],
-    ['14', 'Blender', 'David Gumbao', '1111 Redwood St', 'Shipping', '2'],
-    ['15', 'Toaster', 'Emmanuel', '1212 Maple St', 'Processing', '1'],
-    ['16', 'Microwave', 'Malek Marseil', '1313 Cedar St', 'Confirmed', '8'],
-    ['17', 'Refrigerator', 'Cynthia Ogana', '1414 Oak St', 'Processing', '5'],
-    ['18', 'Vacuum Cleaner', 'James Rogoi', '1515 Pine St', 'Cancelled', '10']
-]
-
-table_frame = CTkScrollableFrame(master=main_view, fg_color="transparent")
-table_frame.pack(expand=True, fill="both", padx=27, pady=30)
-table = CTkTable(master=table_frame, values=table_data, colors=["#E6E6E6", "#EEEEEE"], header_color="#2A8C55", hover_color="#B4B4B4")
-table.edit_row(0, text_color="#fff", hover_color="#2A8C55")
-table.pack(expand=True)
 
 app.mainloop()

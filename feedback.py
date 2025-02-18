@@ -63,7 +63,7 @@ def open_returns():
 def open_dashboard():
     app.destroy()
     try:
-        subprocess.Popen(["python", "Dashboard.py"])
+        subprocess.Popen(["python", "Dashboard_user.py"])
     except subprocess.CalledProcessError as e:
         print("Error executing Dashboard.py:", e)
 

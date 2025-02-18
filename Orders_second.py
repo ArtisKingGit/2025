@@ -61,7 +61,7 @@ def open_returns():
 def open_dashboard():
     app.destroy()
     try:
-        subprocess.Popen(["python", "Dashboard.py"])
+        subprocess.Popen(["python", "Dashboard_user.py"])
     except subprocess.CalledProcessError as e:
         print("Error executing Dashboard.py:", e)
 
@@ -97,21 +97,6 @@ main_view.pack(side="left")
 
 CTkLabel(master=main_view, text="""Thank you for Confirming your order!
          Or Feedback""", font=("Arial Black", 25), text_color="#2A8C55").pack(anchor="nw", pady=(29, 0), padx=27)
-CTkLabel(master=main_view, text="""Submit your feedback if needed to.
-         Or if Submited Feedback go to View Feedback
-         in Settings""", font=("Arial Black", 20), text_color="#2A8C55").pack(anchor="nw", pady=(30, 0), padx=27)
-CTkLabel(master=main_view, text="Orders submitted:", font=("Arial Black", 20), text_color="#2A8C55").pack(anchor="nw", pady=(33, 0), padx=27)
-
-# Fetch and display table data from the database
-table_data = fetch_orders_data()
-
-# Create the table frame
-table_frame = CTkScrollableFrame(master=main_view, fg_color="transparent")
-table_frame.pack(expand=True, fill="both", padx=27, pady=21)
-
-# Create the table
-table = CTkTable(master=table_frame, values=table_data, colors=["#E6E6E6", "#EEEEEE"], header_color="#2A8C55", hover_color="#B4B4B4")
-table.edit_row(0, text_color="#fff", hover_color="#2A8C55")
-table.pack(expand=True)
+CTkLabel(master=main_view, text="Submit your feedback if needed to.", font=("Arial Black", 20), text_color="#2A8C55").pack(anchor="nw", pady=(30, 0), padx=27)
 
 app.mainloop()

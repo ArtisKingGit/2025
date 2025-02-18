@@ -61,7 +61,7 @@ def open_settings():
 def open_returns():
     app.destroy()
     try:
-        subprocess.Popen(["python", "returns.py"])
+        subprocess.Popen(["python", "returns_second.py"])
     except subprocess.CalledProcessError as e:
         print("Error executing Dashboard.py:", e)
 
@@ -71,6 +71,13 @@ def open_accounts():
         app.destroy()
     except subprocess.CalledProcessError as e:
         print("Error executing account.py", e)
+
+def open_dashboard():
+    try:
+        subprocess.Popen(["python", "Dashboard.py"])
+        app.destroy()
+    except subprocess.CalledProcessError as e:
+        print("Error executing Dashboard.py", e)
 
     
 sidebar_frame = CTkFrame(master=app, fg_color="#2A8C55", width=176, height=650, corner_radius=0)
@@ -85,7 +92,7 @@ CTkLabel(master=sidebar_frame, text="", image=logo_img).pack(pady=(38, 0), ancho
 #Analytics
 analytics_img_data = Image.open("analytics_icon.png")
 analytics_img = CTkImage(dark_image=analytics_img_data, light_image=analytics_img_data)
-CTkButton(master=sidebar_frame, image=analytics_img, text="Dashboard", fg_color="transparent", font=("Arial Bold", 14), hover_color="#207244", anchor="w").pack(anchor="center", ipady=5, pady=(60, 0))
+CTkButton(master=sidebar_frame, image=analytics_img, text="Dashboard", fg_color="transparent", font=("Arial Bold", 14), hover_color="#207244", anchor="w", command=open_dashboard).pack(anchor="center", ipady=5, pady=(60, 0))
 
 #Feedback
 feedback_img_data = Image.open("feedback_icon.png")

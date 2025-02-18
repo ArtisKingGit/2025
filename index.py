@@ -38,7 +38,7 @@ def call():
 
 def call2():
     window.destroy()
-    subprocess.Popen(["python", "/Users/beginner/Desktop/Advanced Arthur/Python-Advanced-main/index2.py"])  # Update with the correct path to index2.py
+    subprocess.Popen(["python", "admin.py"])  # Update with the correct path to index2.py
 
 # Function to open registration form
 def opensecondarywindow():
@@ -131,9 +131,12 @@ btn_regist.pack(pady=50)
 grid = CTkButton(sidebar_frame2, text_color="Black",height=20, width=300, font=("Arial", 16), text="Already have an account? Sign in here", fg_color="#fff", border_width=3,corner_radius= 10, hover_color="#268750",border_color="#207244", command=call)
 grid.pack(pady=10)
 
+grid2 = CTkButton(sidebar_frame2, text_color="Black",height=20, width=300, font=("Arial", 16), text="Are you an Admin? Sign in here", fg_color="#fff", border_width=3,corner_radius= 10, hover_color="#268750",border_color="#207244", command=call2)
+grid2.pack(pady=10)
+
 # Centering buttons
 btn_regist.pack(pady=(50, 10), anchor="center")
-grid.pack(pady=(10, 50), anchor="center")
+grid2.pack(pady=(10, 50), anchor="center")
 
 
 window.mainloop()

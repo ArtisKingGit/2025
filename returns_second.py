@@ -116,9 +116,6 @@ main_view = CTkFrame(master=app, fg_color="#fff",  width=680, height=650, corner
 main_view.pack_propagate(0)
 main_view.pack(side="left")
 
-CTkLabel(master= main_view, text = "Thank You! For returning your product", font = ("Arial Bold", 25), text_color= "#207244").pack(anchor = "nw", pady= (20, 0), padx = 24)
-CTkLabel(master= main_view, text = """If you want to submit feedback, go to the feedback 
-         page.""", font = ("Arial Bold", 25), text_color= "#207244").pack(anchor = "nw", pady= (20, 0), padx = 24)
 CTkLabel(master= main_view, text = "Returns:", font = ("Arial Bold", 25), text_color= "#207244").pack(anchor = "nw", pady= (20, 0), padx = 24)
 
 table_data = fetch_orders_data()

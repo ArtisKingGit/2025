@@ -56,7 +56,7 @@ def open_orders():
 def open_feedback():
     app.destroy()
     try:
-        subprocess.Popen(["python", "feedback.py"])
+        subprocess.Popen(["python", "feedback_view.py"])
     except subprocess.CalledProcessError as e:
         print("Error executing Dashboard.py:", e)
     
@@ -70,7 +70,7 @@ def open_settings():
 def open_returns():
     app.destroy()
     try:
-        subprocess.Popen(["python", "returns.py"])
+        subprocess.Popen(["python", "returns_second.py"])
     except subprocess.CalledProcessError as e:
         print("Error executing Dashboard.py:", e)
     
@@ -123,8 +123,6 @@ title_frame = CTkFrame(master=main_view, fg_color="transparent")
 title_frame.pack(anchor="n", fill="x",  padx=27, pady=(29, 0))
 
 CTkLabel(master=title_frame, text="Orders", font=("Arial Black", 25), text_color="#2A8C55").pack(anchor="nw", side="left")
-
-CTkButton(master=title_frame, text="+ New Order",  font=("Arial Black", 15), text_color="#fff", fg_color="#2A8C55", hover_color="#207244", command= open_orders).pack(anchor="ne", side="right")
 
 #The metrics frame
 metrics_frame = CTkFrame(master=main_view, fg_color="transparent")

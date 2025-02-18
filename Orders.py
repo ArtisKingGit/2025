@@ -28,7 +28,7 @@ def open_feedback():
 def open_settings():
     app.destroy()
     try:
-        subprocess.Popen(["python", "settings.py"])
+        subprocess.Popen(["python", "settings_second.py"])
     except subprocess.CalledProcessError as e:
         print("Error executing Dashboard.py:", e)
     

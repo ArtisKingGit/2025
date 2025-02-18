@@ -59,26 +59,17 @@ def open_returns():
 def open_dashboard():
     app.destroy()
     try:
-        subprocess.Popen(["python", "Dashboard.py"])
+        subprocess.Popen(["python", "Dashboard_user.py"])
     except subprocess.CalledProcessError as e:
         print("Error executing Dashboard.py:", e)
         
 def open_map():
     app.destroy()
     try:
-        subprocess.Popen(["python", "map.py"])
+        subprocess.Popen(["python", "map_second.py"])
     except subprocess.CalledProcessError as e:
         print("Error executing map.", e)
-        
-def open_feedback_view():
-    app.destroy()
-    try:
-        subprocess.Popen(["python", "feedback_view.py"])
-        
-    except subprocess.CalledProcessError as e:
-        print("Error executing the Feedback View", e)
-        
-        
+               
  
 #Sidebar- main
 sidebar_frame = CTkFrame(master=app, fg_color="#2A8C55",  width=176, height=650, corner_radius=0)

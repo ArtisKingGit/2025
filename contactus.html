@@ -15,6 +15,9 @@
          <section>
             <div class="section-header">
                <div class="container">
+                  <header>
+                     <button onclick="goBack()" class="go-back-btn">Go Back</button>
+                  </header>
                   <h2>Contact Us</h2>
                   <p>Here you can contact us and give us your feedback on what you think about our website.</p>
                </div>
@@ -94,6 +97,11 @@
       <footer style="background-color: grey;">
          <p>&copy; 2025 Created by Patrick & Arthur</p>
       </footer>
+      <script>
+         function goBack() {
+             window.history.back();
+         }
+     </script>
    </body>
 </html>
 

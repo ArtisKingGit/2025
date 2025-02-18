@@ -8,32 +8,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <style>
-  .go-back-btn {
-    background-color: #07a31c;
-    background: linear-gradient(90deg, #07a31c, #0be016);
-    color: #02ee8c;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(8, 24, 8, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .go-back-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(9, 238, 139, 0.7);
-  }
   
 </style>
-<body> <div class="go-back-btn"><button onclick="goBack()">Go Back</button></div> 
+<body>  
   <script>
     function goBack() {
       window.history.back();
     }
   </script>
   </div>
+  <button onclick="goBack()" class="go-back-btn">Go Back</button>
   <div class="container">
     <form action="#" class="form loginForm active">
       <h1 class="title">Login</h1>

@@ -2,7 +2,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(rgb(0,188,17),black, grey);
+    background: linear-gradient(rgb(0,188,17), rgb(12, 88, 0),black, grey);
+    backdrop-filter: blur(5px);
     color: #e0e0e0;
 }
 
@@ -42,7 +43,7 @@ main {
     display: flex;
     flex-direction:column;
     align-items:center; /* Centers the video cards */
-    gap: 100px;
+    gap: 100px;/* To add the gap between videos */
 }
 .video-card {
     background-color: #6a6a6a;
@@ -83,5 +84,5 @@ footer {
     cursor: pointer;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;/* To add the transofmation to the go back button */
 }

@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.card-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+
+.card {
+    background-color: #2b2929;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(63, 177, 55, 0.971);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    margin-bottom: 10px;
+}
+
+
+.social-icons {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icons i {
+    background: #0f7939;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+
+.btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 20px;
+    border: 2px solid #00ff62;
+    border-radius: 20px;
+    background: transparent;
+    color: #1eff00;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover{
+    transform: translateY(-10px);
+}
+
+.btn:hover {
+    background: #00ff2f;
+    color: #1a1a1a;
+}
+
+.follow {
+    margin-bottom: 10px;
+}
+
+header {
+    background: rgba(5, 10, 3, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+.h1{
+    padding: 12px;
+}
+
+.go-back-btn {
+    background: linear-gradient(90deg, #444, #666);
+    color: #e0e0e0;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}

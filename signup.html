@@ -19,39 +19,37 @@
   </div>
   <button onclick="goBack()" class="go-back-btn">Go Back</button>
   <div class="container">
-    <form action="#" class="form loginForm active">
+    <form action="#" method="POST" class="form loginForm active">
       <h1 class="title">Login</h1>
       <div class="inputBox">
         <i class='bx bx-envelope'></i>
-        <input type="email" placeholder="Enter your admission number" required>
+        <input type="email" name="admission_number" placeholder="Enter your admission number" required>
       </div>
       <div class="inputBox">
         <i class='bx bx-lock-alt'></i>
-        <input type="password" placeholder="Enter your password" required>
+        <input type="password" name="password" placeholder="Enter your password" required>
       </div>
-      <a href="" class="forgotPassLink">Forgot password?</a>
       <input type="submit" value="Login" class="submitBtn">
-      <label for="" class="notMember">Not a member? <span><a href="#" class="signupLink">Sign Up.</a></span></label>
+      <label for="#" class="notMember">Not a member? <span><a href="#" class="signupLink">Sign Up.</a></span></label>
     </form>
-
-
-    <form action="#" class="form signupForm inactive">
+    
+    <form action="" method="POST" class="form signupForm inactive">
       <h1 class="title">Sign Up</h1>
       <div class="inputBox">
         <i class='bx bx-envelope'></i>
-        <input type="email" placeholder="Enter your admission number" required>
+        <input type="email" name="admission_number" placeholder="Enter your admission number" required>
       </div>
       <div class="inputBox">
         <i class='bx bx-lock-alt'></i>
-        <input type="password" placeholder="Enter your password" required>
+        <input type="password" name="password" placeholder="Enter your password" required>
       </div>
       <div class="inputBox">
         <i class='bx bx-lock-alt'></i>
-        <input type="password" placeholder="Re-enter your password" required>
+        <input type="password" name="confirm_password" placeholder="Re-enter your password" required>
       </div>
       <input type="submit" value="Sign Up" class="submitBtn">
       <label for="" class="isMember">Is a member? <span><a href="#" class="loginLink">Login.</a></span></label>
-    </form>    
+    </form>
   </div>
 
   <script src="script.js"></script>

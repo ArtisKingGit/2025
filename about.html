@@ -12,12 +12,16 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            height: 100%;
+            overflow-x: hidden; /* Prevents horizontal scrolling */
+        }
+
         body {
             font-family: 'Roboto', sans-serif;
             background-image: url('af3e75fbd20540d06bca1a3481a68719.jpg');
             background-size: cover;
             color: #e0e0e0;
-            overflow: hidden;
         }
 
         header {
@@ -74,6 +78,11 @@
         .go-back-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .container {
+            min-height: 100vh;
+            padding-bottom: 20px;
         }
 
         section.about {
@@ -135,8 +144,6 @@
             color: #e0e0e0;
             text-align: center;
             padding: 10px;
-            position: relative;
-            bottom: 0;
             width: 100%;
             margin-top: auto;
         }
@@ -155,23 +162,21 @@
             </ul>
         </nav>
     </header>
-    <section class="about">
-        <div class="container">
+    <div class="container">
+        <section class="about">
             <h2>About Us</h2>
             <p>Welcome to Dawamu School Bookshop, your go-to place for all academic and leisure reading needs. Our mission is to provide a wide range of books to inspire and educate our students while fostering a love for reading.</p>
-            <p>Located within the vibrant community of Dawamu School, our online platform offers a browsing experience, making it easier for students and staff to find and purchase the books they need with just a few clicks, making the library digitalized and more efficient.</p>
+            <p>Located within the vibrant community of Dawamu School, our online platform offers a browsing experience, making it easier for students and staff to find and purchase the books they need with just a few clicks.</p>
             <div class="team">
                 <div class="team-member">
-                   
                     <h3>Arthur Gichuki</h3>
                     <p>Founder & Developer</p>
                     <h3>Patrick Gichuki</h3>
                     <p>Developer</p>
                 </div>
-               
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
     <footer>
         <p>&copy; 2025 Dawamu School Bookshop. All rights reserved.</p>
     </footer>
